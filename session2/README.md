@@ -13,7 +13,7 @@ http://localhost/frontend-catalog/api/v1/dashboard
 
 ![Alt text](resources/frontend_response.png?raw=true)
 
-Kilali: `istioctl dashboard kiali`
+Kiali: `istioctl dashboard kiali`
 ![Alt text](resources/kiali_graph.png?raw=true)
 
 ![Alt text](resources/kiali_apps.png?raw=true)
