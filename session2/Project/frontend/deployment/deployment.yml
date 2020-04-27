@@ -43,7 +43,7 @@ spec:
       serviceAccountName: servicemesh-frontend
       containers:
         - name: frontend
-          image: alexpletnev/frontend-service:1.0
+          image: ositnianskyi/frontend-service:1.0
           imagePullPolicy: IfNotPresent #Or use Always to download it from dockerhub
           ports:
             - containerPort: 8080

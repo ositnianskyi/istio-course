@@ -43,7 +43,7 @@ spec:
       serviceAccountName: servicemesh-authors
       containers:
         - name: authors
-          image: alexpletnev/authors-service:1.0
+          image: ositnianskyi/authors-service:1.0
           imagePullPolicy: IfNotPresent #Or use Always to download it from dockerhub
           ports:
             - containerPort: 8080

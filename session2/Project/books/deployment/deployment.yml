@@ -43,7 +43,7 @@ spec:
       serviceAccountName: servicemesh-books
       containers:
         - name: books
-          image: alexpletnev/books-service:1.0
+          image: ositnianskyi/books-service:1.0
           imagePullPolicy: IfNotPresent #Or use Always to download it from dockerhub
           ports:
             - containerPort: 8080
