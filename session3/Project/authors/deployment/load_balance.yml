@@ -1,0 +1,32 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: authors
+spec:
+  hosts:
+    - authors
+  http:
+    - route:
+        - destination:
+            host: authors
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: authors
+spec:
+  host: authors
+  trafficPolicy:
+    loadBalancer:
+      simple: RANDOM
+    connectionPool:
+      tcp:
+        maxConnections: 2
+      http:
+        http1MaxPendingRequests: 2
+        maxRequestsPerConnection: 2
+      outlierDetection:
+        consecutiveErrors: 2
+        interval: 2s
+        baseEjectionTime: 5m
+        maxEjectionPercent: 5

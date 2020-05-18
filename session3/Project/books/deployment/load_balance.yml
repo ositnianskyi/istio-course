@@ -1,0 +1,32 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: books
+spec:
+  hosts:
+    - books
+  http:
+    - route:
+        - destination:
+            host: books
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: books
+spec:
+  host: books
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
+    connectionPool:
+      tcp:
+        maxConnections: 1
+      http:
+        http1MaxPendingRequests: 1
+        maxRequestsPerConnection: 1
+      outlierDetection:
+        consecutiveErrors: 1
+        interval: 1s
+        baseEjectionTime: 1m
+        maxEjectionPercent: 10
