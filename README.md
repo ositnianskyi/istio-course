@@ -13,3 +13,6 @@ https://istio.io/docs/setup/getting-started/
 
 #Session 3
 [README session 3](session3/README.md)
+
+#Session 4
+[README session 4](session4/README.md)
