@@ -3,6 +3,7 @@
 https://istio.io/docs/setup/getting-started/
 
 #Service architecture
+
 ![Alt text](architecture.png?raw=true)
 
 #Session 1
